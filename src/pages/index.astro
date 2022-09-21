@@ -1,0 +1,77 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import Favicon from "../assets/Favicon.astro";
+import Animation from "../assets/Animation.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="inverted-dots">
+    <div
+      class="hello-card bg-accent rounded-md relative overflow-hidden font-bold p-8 py-16 md:p-16"
+    >
+      <div class="card-decorator left"></div>
+      <div class="card-decorator right"></div>
+      <h1 class="text-2xl md:text-4xl">
+        Hi there, my name is Fernando Montero
+      </h1>
+      <p class="text-xl md:text-3xl">I'm a software engineer working in Web3</p>
+      <div class="favicon text-primary mt-8">
+        <Favicon className="h-16" />
+      </div>
+    </div>
+    <Animation />
+    <main class="bg-background rounded-md p-8 mt-16 md:mt-0">
+      <p>Welcome 👋🏻</p>
+      <p>I'm a software engineer and fullstack Typescript developer.</p>
+      <p>
+        Currently, I'm working full-time at Dekalabs as a Software Engineer.
+      </p>
+      <p>
+        My work mostly requires me to use React and Typescript but my experience
+        includes Nodejs, Python, Web3, SQL, Mongo and more.
+      </p>
+    </main>
+
+    <style>
+      .hello-card {
+        text-align: center;
+      }
+      .favicon {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateY(30%) translateX(-60%);
+      }
+      .card-decorator {
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.15) 6px,
+          transparent 0
+        );
+        background-size: 16px 16px;
+        width: 64px;
+        height: 64px;
+        transform: rotate(45deg);
+      }
+      .left {
+        position: absolute;
+        left: -30px;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      .right {
+        position: absolute;
+        right: -30px;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+    </style>
+  </body>
+</html>
