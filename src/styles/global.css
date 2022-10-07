@@ -14,6 +14,14 @@ body {
   @apply bg-primary-main;
 }
 
+h1 {
+  @apply text-3xl md:text-4xl;
+}
+
+h2 {
+  @apply text-2xl md:text-3xl font-bold;
+}
+
 h1,
 h2,
 h3 {
@@ -77,4 +85,12 @@ blockquote {
     transparent 0
   );
   background-size: 38px 38px;
+}
+
+.container > p {
+  margin-top: 1rem;
+}
+
+.container > :is(p):first-child {
+  margin-top: 0;
 }

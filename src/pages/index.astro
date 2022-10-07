@@ -13,33 +13,54 @@ import Animation from "../assets/Animation.astro";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body class="inverted-dots">
-    <div
-      class="hello-card bg-accent rounded-md relative overflow-hidden font-bold p-8 py-16 md:p-16"
+    <section
+      class="container hello-card bg-accent rounded-md relative overflow-hidden font-bold p-4 py-16 md:px-4"
     >
       <div class="card-decorator left"></div>
       <div class="card-decorator right"></div>
-      <h1 class="text-2xl md:text-4xl">
-        Hi there, my name is Fernando Montero
-      </h1>
-      <p class="text-xl md:text-3xl">I'm a software engineer working in Web3</p>
+      <h1>Hi there, my name is Fernando Montero</h1>
+      <p class="text-xl md:text-2xl">I'm a software engineer working in Web3</p>
       <div class="favicon text-primary mt-8">
         <Favicon className="h-16" />
       </div>
-    </div>
-    <Animation />
-    <main class="bg-background rounded-md p-8 mt-16 md:mt-0">
-      <p>Welcome 👋🏻</p>
-      <p>I'm a software engineer and fullstack Typescript developer.</p>
+    </section>
+    <!-- <Animation /> -->
+    <main
+      class="container bg-background rounded-md p-4 mt-16 md:mt-0 md:text-xl"
+    >
+      <h2>Welcome 👋🏻</h2>
       <p>
-        Currently, I'm working full-time at Dekalabs as a Software Engineer.
+        Currently working full-time as a software engineer in Web3 technology.
       </p>
       <p>
-        My work mostly requires me to use React and Typescript but my experience
-        includes Nodejs, Python, Web3, SQL, Mongo and more.
+        I'm a full-stack developer specialized in frontend applications, but my
+        previous experience includes smart contract development with <span
+          class="decoration">Solidity</span
+        >
+        and PyTeal (Algorand).
+      </p>
+      <p>
+        You can find some of my work in <a
+          href="https://github.com/fmonper1"
+          class="bg-gray-800 text-white">Github</a
+        > or you can check out
+        <a href="https://csgoconsole.com" class="bg-green-800 text-white"
+          >CSGOconsole</a
+        >
+        for some <i>proof-of-work</i> 😉
       </p>
     </main>
-
     <style>
+      .decoration {
+        @apply underline underline-offset-2 decoration-2;
+      }
+      body {
+        display: grid;
+        gap: 2rem;
+        min-height: 100vh;
+        align-items: center;
+        align-content: center;
+      }
       .hello-card {
         text-align: center;
       }
@@ -71,6 +92,16 @@ import Animation from "../assets/Animation.astro";
         right: -30px;
         top: 50%;
         transform: translateY(-50%) rotate(45deg);
+      }
+      @media (min-width: 50em) {
+        body {
+          grid-template-columns: 1.5fr 2fr;
+        }
+      }
+      @media (min-width: 72em) {
+        body {
+          grid-template-columns: 1fr 2fr;
+        }
       }
     </style>
   </body>
